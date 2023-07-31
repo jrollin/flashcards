@@ -1,10 +1,10 @@
 "use client"
 
 import Cards from '@/components/Cards';
-import useSWR from 'swr';
+import useSWR, { Fetcher } from 'swr';
 
 //Write a fetcher function to wrap the native fetch function and return the result of a call to url in json format
-const fetcher = (url: String) => fetch(url).then((res) => res.json());
+const fetcher: Fetcher<unknown, string> = (url) => fetch(url).then((res) => res.json());
 
 export default function Page({ params }: { params: { topicid: number } }) {
     //There are 3 possible states: (1) loading when data is null (2) ready when the data is returned (3) error when there was an error fetching the data

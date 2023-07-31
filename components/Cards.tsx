@@ -1,12 +1,15 @@
-import Card from "./Card";
+import Card, { CardProps } from "./Card";
 
 
-const Cards = ({ cards }) => {
-    console.log(cards);
+type CardsProps = {
+    cards: any
+}
+
+const Cards = ({ cards }: CardsProps) => {
 
     return <div>
         <ul>
-            {cards.map((card, idx) => (
+            {cards.map((card: CardProps, idx: number) => (
                 <li key={idx}>< Card key={idx} name={card.name} language={card.language} /></li>
             ))}
         </ul>
