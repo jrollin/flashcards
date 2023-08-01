@@ -10,7 +10,7 @@ const Cards = ({ cards }: CardsProps) => {
     return <div>
         <ul>
             {cards.map((card: CardProps, idx: number) => (
-                <li key={idx}>< Card key={idx} name={card.name} language={card.language} /></li>
+                <li key={idx}>< Card key={idx} name={card.name} language={card.language} content={card.content} /></li>
             ))}
         </ul>
     </div>
