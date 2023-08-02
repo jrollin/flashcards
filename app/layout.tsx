@@ -22,6 +22,8 @@ export default function RootLayout({
                     <Link href="/" >
                         <h1 className="text-stone-200 font-bold text-2xl">Fiches mémos</h1>
                     </Link>
+                    <p className="mb-6">Quelques fiches pour ne pas oublier ou réviser 😄</p>
+
                 </nav>
                 <main className="flex min-h-screen flex-col items-center p-18">
                     {children}

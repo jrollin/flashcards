@@ -7,10 +7,10 @@ export default async function Page({ params: { topicid, cardid } }: { params: { 
     const topic = await getTopicById(topicid)
     const card = await getCardById(cardid)
     return (
-        <div className="z-10 font-mono text-sm mt-10">
-            {topic && <h2 className="text-stone-200 font-bold text-xl mb-5"><Link href={`/topics/${topic}`}>{topic}</Link></h2>}
+        <>
+            {topic && <h2 className="text-stone-200 font-bold text-xl mb-5"><Link href="/topics">Topic: </Link><Link href={`/topics/${topic}`}>{topic}</Link></h2>}
 
-            <Card title={card.data.title} {...card} />
-        </div >
+            <Card title={card.data.title} description={card.data.description} {...card} />
+        </>
     );
 }

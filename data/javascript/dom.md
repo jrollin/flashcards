@@ -2,13 +2,16 @@
 id: jsdom
 title: Vanilla Dom
 description: My awesome description
-name: "name A"
-language: "CS"
 topic: javascript
 tags:
-  - description: 'Maru is a Scottish Fold from Japan, and he loves boxes.'
-    name: Maru (まる)
 ---
 
-Welcome to my awesome page about  CS
 
+## Question 1 
+
+Answer 1
+
+## Question 2
+
+
+Answer 2

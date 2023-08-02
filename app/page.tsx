@@ -1,10 +1,11 @@
-import Link from "next/link";
+import Topics from "@/components/Topics"
+import { getTopics } from "@/lib/flashcard"
 
-export default function Home() {
+export default async function Home() {
+    const topics = await getTopics()
     return (
-        <div className="z-10 font-mono text-sm ">
-            <p className="mb-6">Pour réviser...</p>
-            <Link href="/topics" >Voir les cartes</Link>
+        <div >
+            <Topics topics={topics} />
         </div>
     )
 }
