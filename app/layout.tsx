@@ -6,8 +6,12 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-    title: 'Flashcards',
+    title: 'Flashcards - Apprendre et réviser | Julien Rollin',
     description: 'Apprendre et réviser avec les fiches mémos',
+    openGraph: {
+        title: 'Flashcards - Apprendre et réviser | Julien Rollin',
+        description: 'Apprendre et réviser avec les fiches mémos',
+    },
 }
 
 export default function RootLayout({
