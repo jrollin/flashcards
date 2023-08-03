@@ -1,7 +1,7 @@
 ---
 id: container-docker
 title: Docker container
-description: Commandes utiles
+description: Process, image layer, registry, limits
 topic: container
 tags:
 ---
@@ -17,6 +17,33 @@ Virtualisation dans le cloud :
 * Ressources compute : virtualisation
 * Virtualisation complète : KVM, Xen
 * Virtualisation conteneurs : OpenVZ, LXC, Docker, RKT
+
+## Qu'est-ce qu'un Cgroup ?
+
+Permet de limiter l'usage de la mémoire / CPU pour un groupe de process
+
+```bash
+/sys/fs/cgroup/*
+```
+
+## Qu'est-ce qu'un namespace ?
+
+Permet aux process d'avoir leur propre :
+* réseau
+* PIDs
+* hostname
+* mounts
+* users
+
+Liste les namespaces d'un process
+
+```bash
+lsns -p 273
+```
+
+## Qu'est-ce que les capabilities ?
+
+Permet d'assigner des autorisations
 
 
 ## Définitons de CRI, CNI et CSI ?
@@ -46,8 +73,8 @@ Container Runtime:
 ## Quels sont les deux éléments nécessaire à l'éxécution d'un container ?
 
 
-* image layer
-* registry
+* image layer : définition du container
+* registry : serveur qui sert les images
 
 
 ### Image layer
