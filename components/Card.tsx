@@ -2,15 +2,10 @@ import { unified } from 'unified'
 import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import sectionize from 'remark-sectionize'
+import CardModel from '@/model/Card'
 
 
-export type CardProps = {
-    title: string,
-    content: string,
-    description: string
-}
-
-const Card = async ({ title, content, description }: CardProps) => {
+const Card = async ({ title, content, description }: CardModel) => {
 
     const data = await unified()
         .use(remarkParse)

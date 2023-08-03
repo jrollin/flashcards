@@ -1,14 +1,14 @@
+import CardModel from "@/model/Card";
 import Link from "next/link";
 
 
-export type CardsProp = [{ data: { id: string, title: string, topic: string, description: string } }]
 
-const Cards = ({ cards }: { cards: CardsProp }) => {
+const Cards = ({ cards }: { cards: CardModel[] }) => {
     return <>
         {cards.map((card, idx: number) => (
             <div key={idx} className="bg-white text-black p-6 mb-6">
-                <h2 className="text-xl"><Link href={`/topics/${card.data.topic}/${card.data.id}`} >{card.data.title}</Link></h2>
-                <p >{card.data.description} </p>
+                <h2 className="text-xl"><Link href={`/topics/${card.topic}/${card.id}`} >{card.title}</Link></h2>
+                <p >{card.description}</p>
             </div>
         ))}
     </>
