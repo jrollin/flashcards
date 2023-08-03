@@ -30,7 +30,7 @@ export default function RootLayout({
                     <p className="mb-6">Quelques fiches pour ne pas oublier ou réviser 😄</p>
 
                 </nav>
-                <main className="flex min-h-screen flex-col items-center p-18">
+                <main className="container mx-auto mt-4 px-6 md:mt-8">
                     {children}
                 </main>
             </body>

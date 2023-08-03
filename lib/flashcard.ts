@@ -11,9 +11,10 @@ export async function getTopics(): Promise<TopicModel[]> {
     const cards = await getAllCardsWithContent()
     const topics = Array.from(cards.values())
         .map(card => card.topic)
-    return Array.from(new Set(topics)).map((topic) => { return { id: topic, title: topic } })
+    return Array.from(new Set(topics)).map((topic) => { return { id: topic, title: capitalize(topic) } })
 
 }
+const capitalize = (s: string) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase();
 
 export async function getTopicById(id: string): Promise<TopicModel> {
     const topics = await getTopics();

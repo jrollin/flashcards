@@ -4,7 +4,11 @@ import { getTopics } from "@/lib/flashcard"
 export default async function Home() {
     const topics = await getTopics()
     return (
-        <Topics topics={topics} />
+        <>
+            <h2 className="text-stone-200 font-bold text-xl mb-5">Les sujets</h2>
+
+            <Topics topics={topics} />
+        </>
     )
 }
 
