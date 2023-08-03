@@ -58,15 +58,18 @@ export async function getAllCardsWithContent(): Promise<Map<string, CardModel>> 
                     const content = fs.readFileSync(filePath, 'utf8');
                     // convert fronntmatter format 
                     const md: GrayMatterFile<string> = matter(content);
-                    // store
-                    const card: CardModel = {
-                        id: md.data.id,
-                        title: md.data.title,
-                        description: md.data.description,
-                        topic: md.data.topic,
-                        content: md.content,
+                    // ignore draft 
+                    if (md.data?.draft === false) {
+                        // store
+                        const card: CardModel = {
+                            id: md.data.id,
+                            title: md.data.title,
+                            description: md.data.description,
+                            topic: md.data.topic,
+                            content: md.content,
+                        }
+                        cards.set(md.data.id, card)
                     }
-                    cards.set(md.data.id, card)
                 })
             }
         }

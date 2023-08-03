@@ -3,6 +3,7 @@ id: network-dns
 title: How DNS works ?
 description: DNS servers, resolvers, nameservers, dig
 topic: network
+draft: false
 tags:
 ---
 
